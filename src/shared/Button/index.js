@@ -37,6 +37,14 @@ const Button = styled.button`
       color: ${themes.regular.white};
     `}
 
+    ${(props) =>
+      props.type === "submit" &&
+      css`
+        border-color: ${themes.regular.violet};
+        background: ${themes.regular.violet};
+        color: ${themes.regular.white};
+      `}
+
   ${(props) =>
     props.type === "side-select" &&
     css`

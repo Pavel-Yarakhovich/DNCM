@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Item from "./Item";
 import { ITEMS } from "../../../config/consts";
 import SideFilter from "./SideFilter";
+import DeliveryInfo from "./DeliveryInfo";
 
 import * as Styled from "./styled";
 
@@ -20,7 +21,7 @@ export default () => {
         <Button type="select" name="shoes" clicked={handleFilter} isActive={selected === "shoes"}>Обувь</Button>
         <Button type="select" name="other" clicked={handleFilter} isActive={selected === "other"}>Разное</Button>
       </Styled.Filter>
-      <Styled.Delivery>Delivery information</Styled.Delivery>
+      <DeliveryInfo />
      
       <Styled.Display>
           {ITEMS.map(({ desc, image }, key) => (

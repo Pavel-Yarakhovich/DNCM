@@ -4,14 +4,14 @@ import { Transition } from "react-transition-group";
 import * as Styled from "./styled";
 
 const defaultMenu = {
-  right: 0,
-  transition: "all 250ms ease",
+  right: -200,
+  transition: "all 250ms ease-out",
 };
 const transitionMenu = {
-  entering: { right: 0 },
-  entered: { right: -200 },
-  exiting: { right: 0 },
-  exited: { right: 0 },
+  entering: { right: -200 },
+  entered: { right: 0 },
+  exiting: { right: -200 },
+  exited: { right: -200 },
 };
 
 export default ({ clicked, selected }) => {

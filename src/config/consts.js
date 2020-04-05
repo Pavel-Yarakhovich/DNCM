@@ -3,6 +3,8 @@ import Baletki from "../assets/image/Balletki.jpg";
 import Shoe from "../assets/image/shoe.png";
 import Child from "../assets/image/child.jpg";
 
+export const EMAIL_TO = "pavel.yarri@gmail.com";
+
 export const ITEMS = [
   {
     id: 1,
