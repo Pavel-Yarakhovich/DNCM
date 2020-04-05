@@ -28,4 +28,10 @@ export const GlobalStyle = createGlobalStyle`
   a:focus {
       text-decoration: none;
   }
+
+  @media (min-width: 1200px) {
+    html {
+      font-size: 16px;
+    }
+  }
 `
