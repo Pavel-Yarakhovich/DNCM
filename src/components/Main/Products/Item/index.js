@@ -11,14 +11,16 @@ const Item = withRouter(({ history, src, description, showPopup }) => {
 
   return (
     <Styled.Container>
+      <Styled.Wrapper>
       <Styled.Image src={src} />
-      <Styled.Description>{description}</Styled.Description>
+      <Styled.Description>{description.substr(0, 80)} ...</Styled.Description>
       <Styled.Buttons>
         <StyledButton type="details" clicked={handleShowDetails}>
           Show details
         </StyledButton>
         <StyledButton type="contact" clicked={() => history.push("/contacts")}>Contact us</StyledButton>
       </Styled.Buttons>
+      </Styled.Wrapper>
     </Styled.Container>
   );
 });

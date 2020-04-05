@@ -1,37 +1,33 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
+import React, { useState } from "react";
+import Button from "../../../shared/Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Item from "./Item";
 import { ITEMS } from "../../../config/consts";
+import SideFilter from "./SideFilter";
 
 import * as Styled from "./styled";
 
 export default () => {
-
+  const [selected, setSelected] = useState(null);
+  const handleFilter = e => setSelected(e.target.name);
   return (
     <Styled.Container>
-      <Styled.Filter color="secondary">
-        <Button>Boys</Button>
-        <Button>Girls</Button>
-        <Button>Shoes</Button>
-        <Button>Other</Button>
+      <Styled.Filter>
+        <Button type="select" name="boy" clicked={handleFilter} isActive={selected === "boy"}>Мальчикам</Button>
+        <Button type="select" name="girl" clicked={handleFilter} isActive={selected === "girl"}>Девочкам</Button>
+        <Button type="select" name="shoes" clicked={handleFilter} isActive={selected === "shoes"}>Обувь</Button>
+        <Button type="select" name="other" clicked={handleFilter} isActive={selected === "other"}>Разное</Button>
       </Styled.Filter>
-
+      <Styled.Delivery>Delivery information</Styled.Delivery>
+     
       <Styled.Display>
-        <Slider 
-          dots={false}
-          slidesToScroll={1}
-          slidesToShow={1}
-        >
           {ITEMS.map(({ desc, image }, key) => (
             <Item key={key} src={image} description={desc}/>
           ))}
-        </Slider>
       </Styled.Display>
-
-
+      <SideFilter clicked={handleFilter} selected={selected}/>
     </Styled.Container>
   );
 };
