@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { themes } from "../../../../../config/themes";
+import { themes } from "../../../config/themes";
 import CloseIcon from '@material-ui/icons/Close';
 
 export const Container = styled.div`

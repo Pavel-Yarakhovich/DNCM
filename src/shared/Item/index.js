@@ -1,8 +1,8 @@
 import React from "react";
-import StyledButton from "../../../../shared/Button";
+import StyledButton from "../../shared/Button";
 import * as Styled from "./styled";
 import { connect } from "react-redux";
-import * as actionTypes from "../../../../store/actions/actionTypes";
+import * as actionTypes from "../../store/actions/actionTypes";
 import PopupContent from "./PopupContent";
 import { withRouter } from "react-router-dom"
 

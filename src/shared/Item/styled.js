@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { themes } from "../../../../config/themes";
+import { themes } from "../../config/themes";
 
 export const Container = styled.div`
   flex: 25% 1 0;

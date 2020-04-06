@@ -29,6 +29,17 @@ const Button = styled.button`
       color: ${themes.regular.gold};
     `}
 
+    ${(props) =>
+      props.type === "hit-details" &&
+      css`
+        width: auto;
+        border-color: ${themes.regular.gold};
+        border-radius: 8px;
+        color: ${themes.regular.gold};
+        background: ${themes.regular.white};
+        align-self: flex-end;
+      `}
+
   ${(props) =>
     props.type === "contact" &&
     css`

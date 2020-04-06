@@ -3,7 +3,7 @@ import Button from "../../../shared/Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Item from "./Item";
+import Item from "../../../shared/Item";
 import { ITEMS } from "../../../config/consts";
 import SideFilter from "./SideFilter";
 import DeliveryInfo from "./DeliveryInfo";

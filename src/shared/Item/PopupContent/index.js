@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./styled";
 import { connect } from "react-redux";
-import * as actionTypes from "../../../../../store/actions/actionTypes";
+import * as actionTypes from "../../../store/actions/actionTypes";
 
 const Content = ({ src, text, closePopup }) => {
 
