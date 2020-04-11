@@ -83,18 +83,6 @@ export const Test = styled.div`
   border: 1px solid red;
 `;
 
-export const Delivery = styled.div`
-  height: 100%;
-  width: 100%;
-  border: 1px solid black;
-  grid-area: delivery;
-  color: ${themes.regular.black};
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-`;
-
 export const SliderContainer = styled(Slider)`
   height: 100%;
 `;

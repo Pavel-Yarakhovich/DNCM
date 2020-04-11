@@ -1,16 +1,20 @@
 import styled from "styled-components";
-import { themes } from "../../../../../config/themes";
+import { themes } from "../../../config/themes";
 import CloseIcon from '@material-ui/icons/Close';
 
 export const Container = styled.div`
-  width: 90vw;
-  height: 90vh;
+  width: 800px;
+  height: 80vh;
   background: ${themes.regular.white};
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-flow: column;
   position: relative;
+
+  @media (max-width: 820px) {
+    width: 85vw;
+  }
 `;
 
 export const Image = styled.img`
@@ -34,4 +38,9 @@ export const Close = styled(CloseIcon)`
   position: absolute;
   top: 8px;
   right: 8px;
+
+  :hover {
+    cursor: pointer;
+    color: ${themes.regular.dark_violet};
+  }
 `;

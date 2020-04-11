@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { themes } from "../../../config/themes";
 import Bg from "../../../assets/image/bg.jpg";
 
@@ -11,8 +11,12 @@ export const Container = styled.div`
   font-size: 1rem;
   color: ${themes.regular.white};
   justify-content: center;
-  background: url(${Bg}) no-repeat center center;
   background-size: cover;
+
+  @media (max-width: 600px) {
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
 `;
 
 export const Motto = styled.p`
@@ -20,6 +24,15 @@ export const Motto = styled.p`
   color: ${themes.regular.black};
   margin: 10px 0 15px;
   text-align: center;
+  width: 300px;
+
+  ${(props) =>
+    props.h1 &&
+    css`
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1rem;
+    `}
 `;
 
 export const Input = styled.input`
@@ -28,25 +41,35 @@ export const Input = styled.input`
   margin: 8px 0;
   box-sizing: border-box;
   padding: 5px 10px;
-  border: 1px solid ${themes.regular.violet};
-  background: ${themes.regular.violet};
-  color: ${themes.regular.white};
-  box-shadow: 0 0 30px ${themes.regular.white};
+  border: 1px solid ${themes.regular.gold};
+  border-radius: 4px;
+  background: ${themes.regular.white};
+  color: ${themes.regular.black};
   font-size: 1rem;
 
   :focus {
-    border-color: ${themes.regular.gold};
-    color: ${themes.regular.black};
-    background: ${themes.regular.white};
-    box-shadow: 1px 2px 5px ${themes.regular.violet};
+    border-color: ${themes.regular.dark_violet};
+    color: ${themes.regular.dark_violet};
+    letter-spacing: 0.1rem;
+    outline: none;
   }
 
   ::placeholder {
-    color: ${themes.regular.white};
+    color: ${themes.regular.gold};
   }
 `;
 
 export const TextArea = styled(Input)`
   height: 90px;
   margin-bottom: 16px;
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+
+  @media (min-width: 616px) {
+    width: 600px;
+  }
 `;

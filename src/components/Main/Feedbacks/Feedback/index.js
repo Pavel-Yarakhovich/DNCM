@@ -8,6 +8,8 @@ const Container = styled.div`
   align-items: center;
   height: 100%;
   justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
 `;
 
 const Photo = styled.div`

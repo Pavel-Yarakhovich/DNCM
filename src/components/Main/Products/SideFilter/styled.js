@@ -30,10 +30,10 @@ export const Toggler = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: 50px;
   height: 60px;
   top: 70px;
-  left: -60px;
-  border-radius: 50% 0 0 50%;
+  left: -50px;
+  border-radius: 50px 0 0 30px;
   background: rgba(44, 0, 49, 0.7);
 `;
