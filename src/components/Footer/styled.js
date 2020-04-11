@@ -4,12 +4,13 @@ import { themes } from "../../config/themes";
 export const Footer = styled.div`
   width: 100%;
   height: 70px;
+  flex-shrink: 0;
   background: ${themes.regular.dark_violet};
   display: flex;
   align-items: center;
   border-top: 4px solid ${themes.regular.white};
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     height: 50px;
   }
 `;

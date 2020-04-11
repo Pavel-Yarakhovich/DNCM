@@ -10,8 +10,8 @@ export const Container = styled.div`
   font-size: 1rem;
   color: ${themes.regular.black};
 
-  @media (max-width: 900px) {
-    height: calc(100vh - 105px);
+  @media (max-width: 768px) {
+    height: calc(100vh - 110px);
   }
 `;
 

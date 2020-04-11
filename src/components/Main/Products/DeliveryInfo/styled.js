@@ -44,6 +44,6 @@ export const Feature_Logo = styled.div`
 export const Feature_Description = styled.p`
   font-size: 0.7rem;
   letter-spacing: 0.08rem;
-  color: #aaa;
+  color: #555;
   margin: 0;
 `;

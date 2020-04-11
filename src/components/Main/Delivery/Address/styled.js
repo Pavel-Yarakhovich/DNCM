@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { themes } from "../../../../config/themes";
-import { Link } from "react-router-dom";
+import InstaLogo from "../../../../assets/image/insta.png";
 
-export const Feature = styled.div`
+export const Address = styled.div`
   display: flex;
   height: 100%;
   flex: 30% 1 1;
@@ -17,23 +17,30 @@ export const Feature = styled.div`
   }
 `;
 
-export const Feature_Logo = styled.div`
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${themes.regular.dark_violet};
-  opacity: 0.6;
-  color: ${themes.regular.white};
-`;
-
-export const Feature_Description = styled.p`
-  font-size: 0.9rem;
+export const Note = styled.p`
+  font-size: 1.2rem;;
   letter-spacing: 0.02rem;
-  color: ${themes.regular.black};
+  color: ${themes.regular.dark_violet};
   margin: 5px 0;
   line-height: 1.3;
+`;
+
+export const Instagram = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Insta = styled.a`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(${InstaLogo}) no-repeat center center;
+  background-size: cover;
+  margin-right: 8px;
+`;
+
+export const Link = styled.a`
+  font-size: inherit;
+  color: ${themes.regular.violet};
+  text-decoration: none;
 `;

@@ -5,8 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as Styled from "./styled";
 import Feedback from "./Feedback";
+import { graphql } from "react-apollo";
+import { moviesQuery } from "./queries";
 
-export default () => {
+export default graphql(moviesQuery)((props) => {
+  console.log(props.data);
   return (
     <Styled.Container>
       <PageHeader title="Отзывы наших клиентов" />
@@ -40,4 +43,5 @@ export default () => {
       </Styled.FeedBacks>
     </Styled.Container>
   );
-};
+});
+

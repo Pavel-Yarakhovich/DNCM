@@ -6,7 +6,7 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
   height: calc(100vh - 150px);
-  background: ${themes.regular.white};
+  background: transparent;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 4fr;

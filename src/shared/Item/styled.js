@@ -12,6 +12,8 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   box-shadow: 2px 3px 8px ${themes.regular.shadow};
+  background: ${themes.regular.white};
+  border-radius: 5px;
   padding: 8px;
   box-sizing: border-box;
   display: flex;

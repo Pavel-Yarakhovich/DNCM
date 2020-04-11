@@ -3,6 +3,12 @@ import { themes } from "../../config/themes";
 
 export const Container = styled.div`
   width: 100%;
+  flex-grow: 1;
+  background: rgba(103, 4, 100, 0.06);
+`;
+
+export const Wrapper = styled.div`
+  width: 100%;
   margin: 0 auto;
   flex-grow: 1;
   display: flex;
