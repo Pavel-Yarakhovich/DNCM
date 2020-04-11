@@ -10,6 +10,7 @@ export const Feature = styled.div`
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid ${themes.regular.gold};
+  background-color: ${themes.regular.white};
   position: relative;
   overflow: hidden;
 `;

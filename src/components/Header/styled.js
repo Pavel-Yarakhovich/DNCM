@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { themes } from "../../config/themes";
 import CallIcon from "@material-ui/icons/Call";
+import InstaLogo from "../../assets/image/insta.png";
 
 export const Header = styled.div`
   width: 100%;
@@ -10,7 +11,7 @@ export const Header = styled.div`
   align-items: center;
   border-bottom: 4px solid ${themes.regular.white};
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     height: 50px;
   }
 `;
@@ -40,6 +41,7 @@ export const Logo = styled.img`
   z-index: 10;
   width: 60px;
   height: 60px;
+  flex-shrink: 0;
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
@@ -47,9 +49,9 @@ export const Logo = styled.img`
   background: ${themes.regular.violet};
   border: 4px solid ${themes.regular.white};
 
-  @media (max-width: 767px) {
+  @media (max-width: 900px) {
     left: 0;
-    top: -10px;
+    top: -4px;
     transform: translateY(0);
   }
 
@@ -64,5 +66,17 @@ export const Contact = styled.a`
 `;
 
 export const Call = styled(CallIcon)`
+  color: ${themes.regular.white};
+`;
+
+export const Insta = styled.a`
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid ${themes.regular.white};
   color: ${themes.regular.white};
 `;
