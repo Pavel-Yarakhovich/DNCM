@@ -7,12 +7,15 @@ import Item from "../../../shared/Item";
 import { ITEMS } from "../../../config/consts";
 import SideFilter from "./SideFilter";
 import DeliveryInfo from "./DeliveryInfo";
+import { useQuery } from "@apollo/react-hooks";
+import { productsQuery } from "./queries";
 
 import * as Styled from "./styled";
 
 export default () => {
   const [selected, setSelected] = useState(null);
   const handleFilter = e => setSelected(e.target.name);
+  const { loading, error, data } = useQuery(productsQuery);
   return (
     <Styled.Container>
       <Styled.Filter>
@@ -24,9 +27,15 @@ export default () => {
       <DeliveryInfo />
      
       <Styled.Display>
-          {ITEMS.map(({ desc, image }, key) => (
+        {loading 
+          ? <p>Loading items...</p>
+          : data.items
+            .filter(({ kind }) => selected !== null && kind === selected)
+            .map(({ id, image, description }) => <Item key={id} src={image} description={description}/>)
+        }
+          {/* {ITEMS.map(({ desc, image }, key) => (
             <Item key={key} src={image} description={desc}/>
-          ))}
+          ))} */}
       </Styled.Display>
       <SideFilter clicked={handleFilter} selected={selected}/>
     </Styled.Container>

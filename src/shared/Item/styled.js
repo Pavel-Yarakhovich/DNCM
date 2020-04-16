@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { themes } from "../../config/themes";
 
 export const Container = styled.div`
-  flex: 25% 1 0;
-  height: auto;
+  width: 33%;
+  height: 400px;
   padding: 8px;
   box-sizing: border-box;
 `;

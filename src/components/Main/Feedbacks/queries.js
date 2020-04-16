@@ -1,9 +1,12 @@
 import { gql } from "apollo-boost";
 
-export const moviesQuery = gql`
-  query moviesQuery {
-    movies {
+export const feedbacksQuery = gql`
+  query feedbacksQuery {
+    feedbacks{
+      id
       name
+      image
+      comment
     }
   }
 `;

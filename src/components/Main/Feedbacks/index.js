@@ -5,43 +5,29 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as Styled from "./styled";
 import Feedback from "./Feedback";
-import { graphql } from "react-apollo";
-import { moviesQuery } from "./queries";
+import { feedbacksQuery } from "./queries";
+import { useQuery } from "@apollo/react-hooks";
 
-export default graphql(moviesQuery)((props) => {
-  console.log(props.data);
+export default () => {
+  const { loading, error, data } = useQuery(feedbacksQuery);
+  console.log(error);
+  console.log("loading", loading);
+  console.log(data);
   return (
     <Styled.Container>
       <PageHeader title="Отзывы наших клиентов" />
       <Styled.FeedBacks>
-        <Slider dots={true} slidesToScroll={1} slidesToShow={3}>
-          <Feedback
-            name="Andrew"
-            comment="Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все!"
-          />
-          <Feedback
-            name="Pavel"
-            comment="Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все! Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все!"
-          />
-          <Feedback
-            name="Ivan"
-            comment="Очень хорошие товары и сервистрая доставка. Супер вообще все! Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все!"
-          />
-          <Feedback
-            name="Alex"
-            comment="Очень хорошие товстрая доставка. Супер вообще все! Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все!"
-          />
-          <Feedback
-            name="Dima"
-            comment="Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все!"
-          />
-          <Feedback
-            name="Anton"
-            comment="Очень хорошие товары и сервис.  все! Очень хорошие товары и сервис. Быстрая доставка. Супер вообще все!"
-          />
-        </Slider>
+        {loading 
+        ? <p>Отзывы загружаются...</p> 
+        : (
+          <Slider dots={true} slidesToScroll={1} slidesToShow={3}>
+            { data.feedbacks.map(({ id, name, comment }) => (
+                <Feedback name={name} comment={comment} />
+              ))
+            }
+          </Slider>
+        )}
       </Styled.FeedBacks>
     </Styled.Container>
   );
-});
-
+};
