@@ -13,7 +13,7 @@ const MapComponent = compose(
   withGoogleMap
 )(({ isMarkerShown, marker }) =>
   <GoogleMap
-    defaultZoom={15}
+    defaultZoom={16}
     defaultCenter={marker}
   >
     {isMarkerShown && <Marker position={marker} />}

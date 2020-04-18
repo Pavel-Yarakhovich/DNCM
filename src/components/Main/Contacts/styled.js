@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { themes } from "../../../config/themes";
-import Bg from "../../../assets/image/bg.jpg";
 
 export const Container = styled.div`
   width: 100%;
@@ -8,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: center;
   font-size: 1rem;
   color: ${themes.regular.white};
   justify-content: center;
@@ -21,8 +21,8 @@ export const Container = styled.div`
 
 export const Motto = styled.p`
   font-size: 1.2rem;
-  color: ${themes.regular.black};
-  margin: 10px 0 15px;
+  color: ${themes.regular.main_text};
+  margin: 0.6rem 0 1rem;
   text-align: center;
   width: 300px;
 
@@ -31,37 +31,66 @@ export const Motto = styled.p`
     css`
       font-size: 1.5rem;
       font-weight: 600;
-      margin: 1rem;
+      margin: 0.8rem;
     `}
 `;
 
 export const Input = styled.input`
   width: 100%;
-  height: 40px;
   margin: 8px 0;
   box-sizing: border-box;
-  padding: 5px 10px;
-  border: 1px solid ${themes.regular.gold};
+  padding: 1.25rem 0.6rem;
+  border: 1px solid ${themes.regular.dark_violet};
   border-radius: 4px;
-  background: ${themes.regular.white};
-  color: ${themes.regular.black};
+  background: transparent;
+  color: ${themes.regular.main_text};
   font-size: 1rem;
+  transition: all 300ms ease;
 
   :focus {
-    border-color: ${themes.regular.dark_violet};
+    border-left-color: ${themes.regular.gold};
+    box-shadow: inset 5px 0 0 ${themes.regular.gold};
     color: ${themes.regular.dark_violet};
     letter-spacing: 0.1rem;
     outline: none;
   }
 
   ::placeholder {
-    color: ${themes.regular.gold};
+    color: ${themes.regular.dark_violet};
+  }
+
+  @media (max-width: 550px) {
+    padding: 1rem 0.5rem;
   }
 `;
 
-export const TextArea = styled(Input)`
-  height: 90px;
-  margin-bottom: 16px;
+export const TextArea = styled.textarea`
+  width: 100%;
+  margin: .5rem 0 1rem;
+  box-sizing: border-box;
+  padding: 1.25rem 0.6rem;
+  border: 1px solid ${themes.regular.dark_violet};
+  border-radius: 4px;
+  background: transparent;
+  color: ${themes.regular.main_text};
+  font-size: 1rem;
+  transition: all 300ms ease;
+
+  :focus {
+    border-left-color: ${themes.regular.gold};
+    box-shadow: inset 5px 0 0 ${themes.regular.gold};
+    color: ${themes.regular.dark_violet};
+    letter-spacing: 0.1rem;
+    outline: none;
+  }
+
+  ::placeholder {
+    color: ${themes.regular.dark_violet};
+  }
+
+  @media (max-width: 550px) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 export const Form = styled.form`

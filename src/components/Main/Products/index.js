@@ -1,43 +1,92 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../../shared/Button";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Item from "../../../shared/Item";
-import { ITEMS } from "../../../config/consts";
 import SideFilter from "./SideFilter";
 import DeliveryInfo from "./DeliveryInfo";
 import { useQuery } from "@apollo/react-hooks";
 import { productsQuery } from "./queries";
+import NoPhoto from "../../../assets/image/no_photo.png";
+import Spinner from "../../../shared/Spinner";
 
 import * as Styled from "./styled";
 
 export default () => {
-  const [selected, setSelected] = useState(null);
-  const handleFilter = e => setSelected(e.target.name);
+  const [filter, setFilter] = useState("all");
+  const handleFilter = (e) => setFilter(e.target.name);
   const { loading, error, data } = useQuery(productsQuery);
+  const [items, setItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  useEffect(() => {
+    !loading && setItems(data.items);
+  }, [loading]);
+
+  useEffect(() => {
+    filter === "all"
+      ? setFilteredItems(items)
+      : setFilteredItems(items.filter(({ kind }) => kind === filter));
+  }, [filter, items]);
+
   return (
     <Styled.Container>
       <Styled.Filter>
-        <Button type="select" name="boy" clicked={handleFilter} isActive={selected === "boy"}>Мальчикам</Button>
-        <Button type="select" name="girl" clicked={handleFilter} isActive={selected === "girl"}>Девочкам</Button>
-        <Button type="select" name="shoes" clicked={handleFilter} isActive={selected === "shoes"}>Обувь</Button>
-        <Button type="select" name="other" clicked={handleFilter} isActive={selected === "other"}>Разное</Button>
+        <Button
+          type="select"
+          name="all"
+          clicked={handleFilter}
+          isActive={filter === "all"}
+        >
+          Все товары
+        </Button>
+        <Button
+          type="select"
+          name="boy"
+          clicked={handleFilter}
+          isActive={filter === "boy"}
+        >
+          Мальчикам
+        </Button>
+        <Button
+          type="select"
+          name="girl"
+          clicked={handleFilter}
+          isActive={filter === "girl"}
+        >
+          Девочкам
+        </Button>
+        <Button
+          type="select"
+          name="shoes"
+          clicked={handleFilter}
+          isActive={filter === "shoes"}
+        >
+          Обувь
+        </Button>
+        <Button
+          type="select"
+          name="other"
+          clicked={handleFilter}
+          isActive={filter === "other"}
+        >
+          Разное
+        </Button>
       </Styled.Filter>
       <DeliveryInfo />
-     
+
       <Styled.Display>
-        {loading 
-          ? <p>Loading items...</p>
-          : data.items
-            .filter(({ kind }) => selected !== null && kind === selected)
-            .map(({ id, image, description }) => <Item key={id} src={image} description={description}/>)
-        }
-          {/* {ITEMS.map(({ desc, image }, key) => (
-            <Item key={key} src={image} description={desc}/>
-          ))} */}
+        {loading ? (
+          <Spinner />
+        ) : (
+          filteredItems.map(({ id, image, description }) => (
+            <Item
+              key={id}
+              src={image ? image : NoPhoto}
+              description={description}
+            />
+          ))
+        )}
       </Styled.Display>
-      <SideFilter clicked={handleFilter} selected={selected}/>
+      <SideFilter clicked={handleFilter} selected={filter} />
     </Styled.Container>
   );
 };

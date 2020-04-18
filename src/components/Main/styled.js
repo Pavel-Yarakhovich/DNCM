@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+  // height: 100%;
   margin: 0 auto;
   flex-grow: 1;
   display: flex;

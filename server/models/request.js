@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const requestSchema = new Schema({
   name: String,
-  address: String,
+  phone: String,
   comment: String,
+  connectBy: String,
   served: Boolean,
 });
 

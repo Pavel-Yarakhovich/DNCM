@@ -5,6 +5,7 @@ export const themes = {
     violet: "#670464",
     black: "#000",
     white: "#FFF",
-    shadow: "#CCC"
+    shadow: "#CCC",
+    main_text: "#180e1a",
   }
 }

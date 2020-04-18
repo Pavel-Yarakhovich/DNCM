@@ -3,7 +3,7 @@ import { themes } from "../../../config/themes";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   display: flex;
   flex-flow: column;
   font-size: 1rem;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const FeedBacks = styled.div`
-  flex-grow: 1;
+  // flex-grow: 1;
   padding: 10px;
   box-sizing: border-box;
 `;

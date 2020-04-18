@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageHeader from "../../../shared/PageHeader";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,24 +7,36 @@ import * as Styled from "./styled";
 import Feedback from "./Feedback";
 import { feedbacksQuery } from "./queries";
 import { useQuery } from "@apollo/react-hooks";
+import { useWindowWidth } from "../../../utils/useWindowWidth";
 
 export default () => {
+  const [feedbacksPerPage, setFeedbacksPerPage] = useState(3);
   const { loading, error, data } = useQuery(feedbacksQuery);
-  console.log(error);
-  console.log("loading", loading);
-  console.log(data);
+  const width = useWindowWidth();
+  useEffect(() => {
+    if (width < 550) setFeedbacksPerPage(1);
+    if (width > 900) {
+      setFeedbacksPerPage(3);
+    } else {
+      setFeedbacksPerPage(2);
+    }
+  }, [width]);
+
   return (
     <Styled.Container>
       <PageHeader title="Отзывы наших клиентов" />
       <Styled.FeedBacks>
-        {loading 
-        ? <p>Отзывы загружаются...</p> 
-        : (
-          <Slider dots={true} slidesToScroll={1} slidesToShow={3}>
-            { data.feedbacks.map(({ id, name, comment }) => (
-                <Feedback name={name} comment={comment} />
-              ))
-            }
+        {loading ? (
+          <p>Отзывы загружаются...</p>
+        ) : (
+          <Slider
+            dots={true}
+            slidesToScroll={1}
+            slidesToShow={feedbacksPerPage}
+          >
+            {data.feedbacks.map(({ id, name, comment }) => (
+              <Feedback name={name} comment={comment} />
+            ))}
           </Slider>
         )}
       </Styled.FeedBacks>

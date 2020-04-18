@@ -19,8 +19,9 @@ const RequestType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: new GraphQLNonNull(GraphQLString) },
-    address: { type: new GraphQLNonNull(GraphQLString) },
+    phone: { type: new GraphQLNonNull(GraphQLString) },
     comment: { type: new GraphQLNonNull(GraphQLString) },
+    connectBy: { type: new GraphQLNonNull(GraphQLString) },
     served: { type: new GraphQLNonNull(GraphQLBoolean) },
   }),
 });
@@ -57,8 +58,9 @@ const Mutation = new GraphQLObjectType({
       args: {
         id: { type: GraphQLID },
         name: { type: new GraphQLNonNull(GraphQLString) },
-        address: { type: new GraphQLNonNull(GraphQLString) },
+        phone: { type: new GraphQLNonNull(GraphQLString) },
         comment: { type: new GraphQLNonNull(GraphQLString) },
+        connectBy: { type: new GraphQLNonNull(GraphQLString) },
         served: { type: new GraphQLNonNull(GraphQLBoolean) },
       },
       resolve(parent, args) {
@@ -67,6 +69,28 @@ const Mutation = new GraphQLObjectType({
           { $set: { served: args.served } },
           { new: true }
         );
+      },
+    },
+    //ADD REQUEST
+    addRequest: {
+      type: RequestType,
+      args: {
+        id: { type: GraphQLID },
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        phone: { type: new GraphQLNonNull(GraphQLString) },
+        comment: { type: new GraphQLNonNull(GraphQLString) },
+        connectBy: { type: new GraphQLNonNull(GraphQLString) },
+        served: { type: new GraphQLNonNull(GraphQLBoolean) },
+      },
+      resolve(parent, args) {
+        const request = new Requests({
+          name: args.name,
+          phone: args.phone,
+          comment: args.comment,
+          connectBy: args.connectBy,
+          served: args.served,
+        });
+        return request.save();
       },
     },
     // ADD ITEM
