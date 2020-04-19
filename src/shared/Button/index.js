@@ -55,6 +55,14 @@ const Button = styled.button`
         border-color: ${themes.regular.violet};
         background: ${themes.regular.violet};
         color: ${themes.regular.white};
+
+        ${(props =
+          props.disabled &&
+          css`
+            opacity: .2;
+            color: ${themes.regular.shadow};
+            cursor: none;
+          `)}
       `}
 
   ${(props) =>
@@ -114,8 +122,14 @@ const Button = styled.button`
       `}
 `;
 
-export default ({ type, children, clicked, name, isActive }) => (
-  <Button type={type} onClick={clicked} name={name} selected={isActive}>
+export default ({ type, children, clicked, name, isActive, disabled }) => (
+  <Button
+    type={type}
+    onClick={clicked}
+    name={name}
+    selected={isActive}
+    disabled={disabled}
+  >
     {children}
   </Button>
 );

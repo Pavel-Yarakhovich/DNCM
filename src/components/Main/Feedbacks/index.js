@@ -8,6 +8,7 @@ import Feedback from "./Feedback";
 import { feedbacksQuery } from "./queries";
 import { useQuery } from "@apollo/react-hooks";
 import { useWindowWidth } from "../../../utils/useWindowWidth";
+import Spinner from "../../../shared/Spinner";
 
 export default () => {
   const [feedbacksPerPage, setFeedbacksPerPage] = useState(3);
@@ -27,7 +28,7 @@ export default () => {
       <PageHeader title="Отзывы наших клиентов" />
       <Styled.FeedBacks>
         {loading ? (
-          <p>Отзывы загружаются...</p>
+          <Spinner />
         ) : (
           <Slider
             dots={true}

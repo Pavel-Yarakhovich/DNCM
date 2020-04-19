@@ -59,6 +59,15 @@ export const Input = styled.input`
     color: ${themes.regular.dark_violet};
   }
 
+  ${(props) =>
+    props.error &&
+    css`
+      border-color: ${themes.regular.error};
+      ::placeholder {
+        color: ${themes.regular.error};
+      }
+    `}
+
   @media (max-width: 550px) {
     padding: 1rem 0.5rem;
   }
@@ -88,6 +97,15 @@ export const TextArea = styled.textarea`
     color: ${themes.regular.dark_violet};
   }
 
+  ${(props) =>
+    props.error &&
+    css`
+      border-color: ${themes.regular.error};
+      ::placeholder {
+        color: ${themes.regular.error};
+      }
+    `}
+
   @media (max-width: 550px) {
     padding: 1rem 0.5rem;
   }
@@ -101,4 +119,10 @@ export const Form = styled.form`
   @media (min-width: 616px) {
     width: 600px;
   }
+`;
+
+export const InputWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: column;
 `;

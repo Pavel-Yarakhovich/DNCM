@@ -7,5 +7,6 @@ export const themes = {
     white: "#FFF",
     shadow: "#CCC",
     main_text: "#180e1a",
+    error: "#bd2e24",
   }
 }
