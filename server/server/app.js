@@ -6,29 +6,7 @@ const cors = require("cors");
 const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
-const PORT = 3005;
-
-// async function listDatabases(client){
-//   const databasesList = await client.db().admin().listDatabases();
-//   console.log("Databases");
-//   databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-// }
-
-// async function main() {
-//   const uri =
-//     "mongodb+srv://Pavel:julia03081989@cluster0-0nlh0.mongodb.net/test?retryWrites=true&w=majority";
-//   const client = new MongoClient(uri);
-//   try {
-//     await client.connect();
-//     await listDatabases(client);
-//   } catch (e) {
-//     console.log(e);
-//   } finally {
-//     await client.close();
-//   }
-// }
-
-// main().catch(console.error);
+const PORT = process.env.PORT || 3005;
 
 mongoose.connect(
   "mongodb+srv://Pavel:julia03081989@cluster0-0nlh0.mongodb.net/dncm?retryWrites=true&w=majority",
@@ -37,7 +15,6 @@ mongoose.connect(
 .catch(err => {
 console.log(Error, err.message);
 });;
-//mongodb+srv://Pavel:<password>@cluster0-0nlh0.mongodb.net/?retryWrites=true&w=majority
 
 app.use(cors());
 
@@ -48,10 +25,6 @@ app.use(
     graphiql: true,
   })
 );
-
-// const dbConnection = mongoose.connection;
-// dbConnection.on("error", (err) => console.log(`Connection error: ${err}`));
-// dbConnection.once("open", () => console.log("Connected to DB"));
 
 app.listen(PORT, (err) => {
   err ? console.log(err) : console.log("Server started!");
