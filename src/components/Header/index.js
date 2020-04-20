@@ -8,11 +8,15 @@ export default () => {
   return (
     <Styled.Header>
       <Styled.Container>
-        <Styled.Logo src={Logo} />
+        <Styled.AdminLink to="/admin">
+          <Styled.Logo src={Logo} />
+        </Styled.AdminLink>
         <Styled.Insta
           href="https://www.instagram.com/danceme_official_minsk/"
           target="_blank"
-        ><InstagramIcon fontSize="large"/></Styled.Insta>
+        >
+          <InstagramIcon fontSize="large" />
+        </Styled.Insta>
         <Styled.Call fontSize="large" />
         <Styled.Contact href="tel:80445421964">
           +375 44 542-19-64

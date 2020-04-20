@@ -3,12 +3,14 @@ import { lazy } from "react";
 const delivery = "/delivery",
   products = "/products",
   feedbacks = "/feedbacks",
-  contacts = "/contacts";
+  contacts = "/contacts",
+  admin = "/admin";
 
 const Delivery = lazy(() => import("../components/Main/Delivery")),
   Products = lazy(() => import("../components/Main/Products")),
   Feedbacks = lazy(() => import("../components/Main/Feedbacks")),
-  Contacts = lazy(() => import("../components/Main/Contacts"));
+  Contacts = lazy(() => import("../components/Main/Contacts")),
+  Admin = lazy(() => import("../components/Main/Admin"));
 
 export const ROUTES = [
   {
@@ -26,5 +28,9 @@ export const ROUTES = [
   {
     path: contacts,
     component: Contacts,
+  },
+  {
+    path: admin,
+    component: Admin,
   },
 ]

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actionTypes from "../../../store/actions/actionTypes";
 import CallIcon from '@material-ui/icons/Call';
 
-const Content = ({ src, text, closePopup }) => {
+const Content = ({ src, text, size, manufacturer, closePopup }) => {
   return (
     <Styled.Container>
       <Styled.Close fontSize="large" onClick={closePopup} />
@@ -16,11 +16,11 @@ const Content = ({ src, text, closePopup }) => {
       <Styled.MoreInfo>
         <Styled.InfoBlock>
           <Styled.InfoTitle>Размеры</Styled.InfoTitle>
-          <Styled.InfoContent>44</Styled.InfoContent>
+          <Styled.InfoContent>{size}</Styled.InfoContent>
         </Styled.InfoBlock>
         <Styled.InfoBlock>
           <Styled.InfoTitle>Производитель</Styled.InfoTitle>
-          <Styled.InfoContent>вааааа</Styled.InfoContent>
+          <Styled.InfoContent>{manufacturer}</Styled.InfoContent>
         </Styled.InfoBlock>
         <Styled.CallLink href="tel:80445421964"><CallIcon fontSize="large"/>Позвонить в магазин</Styled.CallLink>
       </Styled.MoreInfo>

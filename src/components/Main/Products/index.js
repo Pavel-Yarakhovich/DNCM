@@ -77,13 +77,20 @@ export default () => {
         {loading ? (
           <Spinner />
         ) : (
-          filteredItems.map(({ id, image, description }) => (
-            <Item
-              key={id}
-              src={image ? image : NoPhoto}
-              description={description}
-            />
-          ))
+          filteredItems.map(
+            ({ id, image, description, size, manufacturer }) => {
+              console.log(window.atob(image));
+              return(
+              <Item
+                key={id}
+                src={image ? window.atob(image) : NoPhoto}
+                description={description}
+                size={size}
+                manufacturer={manufacturer}
+              />
+              )
+            }
+          )
         )}
       </Styled.Display>
       <SideFilter clicked={handleFilter} selected={filter} />

@@ -6,8 +6,8 @@ import * as actionTypes from "../../store/actions/actionTypes";
 import PopupContent from "./PopupContent";
 import { withRouter } from "react-router-dom";
 
-const Item = withRouter(({ history, src, description, showPopup }) => {
-  const handleShowDetails = () => showPopup(<PopupContent src={src} text={description}/>);
+const Item = withRouter(({ history, src, description, size, manufacturer, showPopup }) => {
+  const handleShowDetails = () => showPopup(<PopupContent src={src} text={description} size={size} manufacturer={manufacturer} />);
 
   return (
     <Styled.Container>

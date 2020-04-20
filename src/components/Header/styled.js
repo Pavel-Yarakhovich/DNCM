@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { themes } from "../../config/themes";
 import CallIcon from "@material-ui/icons/Call";
 import InstaLogo from "../../assets/image/insta.png";
+import { Link } from "react-router-dom";
 
 export const Header = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
+
   @media (min-width: 600px) {
     width: 575px;
   }
@@ -33,7 +34,6 @@ export const Container = styled.div`
   @media (min-width: 1200px) {
     width: 1140px;
   }
-
 `;
 
 export const Logo = styled.img`
@@ -54,7 +54,6 @@ export const Logo = styled.img`
     top: -4px;
     transform: translateY(0);
   }
-
 `;
 
 export const Contact = styled.a`
@@ -79,4 +78,8 @@ export const Insta = styled.a`
   justify-content: center;
   border: 1px solid ${themes.regular.white};
   color: ${themes.regular.white};
+`;
+
+export const AdminLink = styled(Link)`
+
 `;
