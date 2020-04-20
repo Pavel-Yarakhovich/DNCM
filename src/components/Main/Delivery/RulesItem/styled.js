@@ -3,10 +3,12 @@ import { themes } from "../../../../config/themes";
 import { Link } from "react-router-dom";
 
 export const Feature = styled.div`
+  // height: 100%;
   display: flex;
   flex: 30% 1 1;
   flex-flow: column;
   align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   border-bottom: 1px solid ${themes.regular.gold};
 

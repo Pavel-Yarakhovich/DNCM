@@ -8,9 +8,14 @@ export const Address = styled.div`
   flex: 30% 1 1;
   flex-flow: column;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 8px;
   box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    align-items: flex-end;
+    justify-content: center;
+  }
 
   @media (max-width: 600px) {
     align-items: center;
@@ -18,7 +23,7 @@ export const Address = styled.div`
 `;
 
 export const Note = styled.p`
-  font-size: 1.2rem;;
+  font-size: 1.2rem;
   letter-spacing: 0.02rem;
   color: ${themes.regular.dark_violet};
   margin: 5px 0;

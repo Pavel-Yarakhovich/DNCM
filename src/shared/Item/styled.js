@@ -2,10 +2,18 @@ import styled from "styled-components";
 import { themes } from "../../config/themes";
 
 export const Container = styled.div`
-  flex: 25% 1 0;
+  width: 33%;
   height: auto;
   padding: 8px;
   box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    width: 50%;
+  }
+
+  @media (max-width: 380px) {
+    width: 100%;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -46,7 +54,8 @@ export const Image = styled.img`
 export const Description = styled.div`
   font-size: 0.8rem;
   flex-grow: 1;
-  color: ${themes.regular.black};
+  color: ${themes.regular.main_text};
+  text-transform: uppercase;
   text-align: center;
   margin: 0 0 15px;
   // height: 125px;

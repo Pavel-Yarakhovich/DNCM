@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Placeholder from "../../../../assets/image/avatar-placeholder.png";
 
 const Container = styled.div`
   display: flex;
@@ -12,11 +13,12 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-const Photo = styled.div`
+const Photo = styled.img`
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #ccc;
+  object-fit: cover;
+  object-position: center center;
 `;
 
 const Customer = styled.p`
@@ -35,9 +37,9 @@ const Comment = styled.p`
   font-style: italic;
 `;
 
-export default ({ name, comment }) => (
+export default ({ image = Placeholder, name, comment }) => (
   <Container>
-    <Photo />
+    <Photo src={image}/>
     <Customer>{name}</Customer>
     <Comment>{comment}</Comment>
   </Container>

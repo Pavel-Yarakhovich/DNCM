@@ -6,6 +6,19 @@ export const App = styled.div`
   height: 100vh;
   display: flex;
   flex-flow: column;
+  position: relative;
+`;
+
+export const ContentWrapper = styled.div`
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 100vh;
+  display: flex;
+  flex-flow: column;
 `;
 
 export const GlobalStyle = createGlobalStyle`
@@ -16,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${themes.regular.white};
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
   }
 
   a:hover {
@@ -34,4 +47,4 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 16px;
     }
   }
-`
+`;

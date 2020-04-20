@@ -11,6 +11,8 @@ export const Anchor = styled(Link)`
 `;
 
 export const MenuLink = styled.div`
+  display: flex;
+  align-items: center;
   color: ${themes.regular.white};
   ${(props) =>
     props.isActive &&

@@ -34,3 +34,13 @@ export const Container = styled.div`
   }
 `;
 
+export const Title = styled.span`
+  font-size: 1.1rem;
+  margin: 0;
+  padding-left: 10px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+

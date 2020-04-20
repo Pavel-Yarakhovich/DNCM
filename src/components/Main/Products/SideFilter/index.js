@@ -23,9 +23,17 @@ export default ({ clicked, selected }) => {
         <Styled.Menu
           style={{
             ...defaultMenu,
-            ...transitionMenu[state]
+            ...transitionMenu[state],
           }}
         >
+          <Button
+            type="side-select"
+            name="all"
+            clicked={clicked}
+            isActive={selected === "all"}
+          >
+            Все товары
+          </Button>
           <Button
             type="side-select"
             name="boy"
