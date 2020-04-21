@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 
 mongoose.connect(
+  process.env.MONGODB_URI ||
   "mongodb+srv://Pavel:julia03081989@cluster0-0nlh0.mongodb.net/dncm?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true },
 ).then(() => console.log('DB Connected!'))
@@ -25,6 +26,10 @@ app.use(
     graphiql: true,
   })
 );
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build"));
+}
 
 app.listen(PORT, (err) => {
   err ? console.log(err) : console.log("Server started!");

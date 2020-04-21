@@ -79,11 +79,10 @@ export default () => {
         ) : (
           filteredItems.map(
             ({ id, image, description, size, manufacturer }) => {
-              console.log(window.atob(image));
               return(
               <Item
                 key={id}
-                src={image ? window.atob(image) : NoPhoto}
+                src={image ? image : NoPhoto}
                 description={description}
                 size={size}
                 manufacturer={manufacturer}

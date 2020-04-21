@@ -6,6 +6,7 @@ import { addItemMutation } from "./mutations";
 import Confirmation from "./ConfirmationPopup";
 import ErrorMessage from "../../../shared/ErrorMessage";
 import PreviewPlaceholder from "../../../assets/image/no_photo.png";
+import imgBase64 from "../../../utils/imgBase64";
 
 import * as Styled from "./styled";
 
@@ -20,10 +21,7 @@ export default () => {
   });
   const [addItem, { data }] = useMutation(addItemMutation);
   const [showMessage, setShowMessage] = useState(false);
-  const [uploadedImage, setUploadedImage] = useState({
-    url: null,
-    info: null,
-  });
+  const [uploadedImage, setUploadedImage] = useState();
 
   const handleInputChange = (e) => {
     setFormValues({
@@ -44,9 +42,10 @@ export default () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formValues);
+    const image = await imgBase64(formValues.image);
     await addItem({
       variables: {
-        image: formValues.image,
+        image: image,
         description: formValues.description,
         size: formValues.size,
         manufacturer: formValues.manufacturer,
@@ -60,12 +59,13 @@ export default () => {
   };
 
   const handleFileChosen = (file) => {
-    // const src = URL.createObjectURL(file);
+    const src = URL.createObjectURL(file);
     setFormValues({
       ...formValues,
-      image: window.btoa(file),
+      image: file,
     });
-    // URL.revokeObjectURL(src);
+    setUploadedImage(URL.createObjectURL(file));
+    URL.revokeObjectURL(src);
   };
 
   return (
@@ -77,7 +77,7 @@ export default () => {
           <Styled.Motto>Изображение товара</Styled.Motto>
             <Styled.UploadImage>
               <Styled.UploadedImage
-                src={formValues.image || PreviewPlaceholder}
+                src={uploadedImage || PreviewPlaceholder}
               />
               <Styled.UploadLabel>
                 <Styled.UploadInput
