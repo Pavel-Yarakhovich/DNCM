@@ -17,6 +17,10 @@ mongoose.connect(
 console.log(Error, err.message);
 });;
 
+mongoose.connection.on("connected", () => {
+  console.log("Mongoose is connected!!!");
+});
+
 app.use(cors());
 
 app.use(

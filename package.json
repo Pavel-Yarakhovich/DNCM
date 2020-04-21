@@ -37,7 +37,7 @@
   "scripts": {
     "dev": "nodemon server/server/app.js",
     "start": "node server/server/app.js",
-    "build": "npm run build",
+    "build": "react-scripts build",
     "install-client": "npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "test": "react-scripts test",
