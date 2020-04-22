@@ -1,5 +1,4 @@
 import React from "react";
-import Item from "../../../../shared/Item";
 import { ITEMS } from "../../../../config/consts";
 import Button from "../../../../shared/Button";
 import { withRouter } from "react-router-dom";
@@ -12,7 +11,7 @@ export default withRouter(({ history }) => {
     <Styled.Feature>
       {ITEMS.slice(0, 1).map(({ id, image, desc }) => (
         <Styled.HitItem src={image}>
-          <Button type="hit-details" clicked={() => history.push("/products")}>Подробнее</Button>
+          <Button type="hit-details" clicked={() => history.push("/products")}>Перейти в каталог</Button>
         </Styled.HitItem>
       ))}
       <Styled.HitMark><ThumbUpIcon fontSize="large"/></Styled.HitMark>

@@ -18,13 +18,13 @@ export default ({ logo, description }) => {
   };
   const transitionStyles = {
     entering: { height: 0 },
-    entered: { height: width > 600 ? "auto" : 160 },
+    entered: { height: width > 550 ? "auto" : "auto" },
     exiting: { height: 0 },
     exited: { height: 0 },
   };
 
   return (
-    <Styled.Feature>
+    <Styled.Feature  expanded={showMore}>
       <Styled.Top>
         <Styled.Feature_Logo expanded={showMore}>
           {logo}
@@ -33,7 +33,7 @@ export default ({ logo, description }) => {
           Подробнее
         </ShowMoreButton>
       </Styled.Top>
-      <Transition in={showMore || width > 600} timeout={250} mountOnEnter unmountOnExit>
+      <Transition in={showMore || width > 550} timeout={250} mountOnEnter unmountOnExit>
         {(state) => (
           <Styled.DescriptionBlock
             style={{

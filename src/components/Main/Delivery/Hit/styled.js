@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { themes } from "../../../../config/themes";
-import { Link } from "react-router-dom";
-
 
 export const Feature = styled.div`
   width: 100%;
@@ -13,6 +11,13 @@ export const Feature = styled.div`
   background-color: ${themes.regular.white};
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 550px) {
+    margin-top: 15px;
+    border-radius: 0;
+    border-color: transparent;
+    box-shadow: 0 0 8px ${themes.regular.dark_violet};
+  }
 `;
 
 export const HitItem = styled.div`

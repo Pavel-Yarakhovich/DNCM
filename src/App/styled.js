@@ -4,6 +4,7 @@ import { themes } from "../config/themes";
 export const App = styled.div`
   width: 100%;
   height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-flow: column;
   position: relative;

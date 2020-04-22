@@ -4,35 +4,38 @@ import { themes } from "../../../config/themes";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 const Button = styled.button`
-  height: 36px;
+  height: 70px;
   padding: 0 12px;
   box-sizing: border-box;
-  border-radius: 6px;
-  border: 1px solid ${themes.regular.violet};
-  background: ${themes.regular.white};
+  border: none;
+  border-radius: 35px 0 0 35px;
+  // border: 1px solid ${themes.regular.dark_violet};
+  background: rgba(44, 0, 49, 0.3);
   font-size: 1rem;
-  color: ${themes.regular.violet};
+  color: ${themes.regular.white};
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-left: auto;
   transition: all 250ms ease;
+  text-transform: lowercase;
+  letter-spacing: .1em;
   :focus {
     outline: none;
   }
 
   ${props => props.expanded && css`
-    border-color: ${themes.regular.gold};
+    background: linear-gradient(25deg, transparent 40%, rgba(44, 0, 49, 0.3));
     color: ${themes.regular.gold};
   `}
 
-  @media (min-width: 600px) {
+  @media (min-width: 550px) {
     display: none;
   }
 `;
 
 const Arrow = styled(ArrowDropDownIcon)`
-color: ${themes.regular.violet};
+color: ${themes.regular.white};
 transition: all 250ms ease;
 ${props => props.expanded && css`
   transform: rotate(180deg);

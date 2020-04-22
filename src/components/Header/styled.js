@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { themes } from "../../config/themes";
 import CallIcon from "@material-ui/icons/Call";
 import InstaLogo from "../../assets/image/insta.png";
@@ -58,28 +58,44 @@ export const Logo = styled.img`
 
 export const Contact = styled.a`
   color: ${themes.regular.white};
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   padding: 0 10px;
   text-decoration: none;
+  text-shadow: 0 1px 15px black;
+`;
+
+const shake = keyframes`
+  0%, 20%, 40%, 60%, 80% { 
+    transform: rotate(10deg);
+    // -webkit-transform: scale(0.0);
+  } 
+  10%, 30%, 50%, 70%, 90% { 
+    transform: rotate(-10deg);
+    // -webkit-transform: scale(0.0);
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.4);
+    color: ${themes.regular.gold};
+  }
 `;
 
 export const Call = styled(CallIcon)`
   color: ${themes.regular.white};
+  animation: ${shake} 2s infinite linear;
 `;
 
 export const Insta = styled.a`
   width: 40px;
   height: 40px;
-  margin-right: 8px;
+  margin: 0 auto;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid ${themes.regular.white};
   color: ${themes.regular.white};
+  background: url(${InstaLogo}) no-repeat center center;
+  background-size: cover;
 `;
 
-export const AdminLink = styled(Link)`
-
-`;
+export const AdminLink = styled(Link)``;
