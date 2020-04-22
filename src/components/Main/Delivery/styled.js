@@ -27,6 +27,8 @@ export const Content = styled.div`
     "address map map map";
 
   @media (max-width: 1200px) {
+    padding: 10px;
+    box-sizing: border-box;
     grid-template-rows: repeat(2, minmax(100px, max-content)) 300px;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
@@ -36,10 +38,10 @@ export const Content = styled.div`
       "payment map";
   }
 
-  @media (max-width: 600px) {
-    padding: 10px;
+  @media (max-width: 550px) {
+    padding: 0;
     box-sizing: border-box;
-    grid-template-columns: 100%;
+    grid-template-columns: 100vw;
     grid-template-rows: repeat(3, minmax(100px, max-content)) 300px 300px minmax(
         100px,
         max-content
@@ -50,8 +52,8 @@ export const Content = styled.div`
       "payment"
       "warranty"
       "hits"
-      "map"
-      "address";
+      "address"
+      "map";
   }
 `;
 

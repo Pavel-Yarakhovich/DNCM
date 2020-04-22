@@ -15,7 +15,10 @@ export default () => {
   const { loading, error, data } = useQuery(feedbacksQuery);
   const width = useWindowWidth();
   useEffect(() => {
-    if (width < 550) setFeedbacksPerPage(1);
+    if (width < 550) {
+      setFeedbacksPerPage(1);
+      return;
+    }
     if (width > 900) {
       setFeedbacksPerPage(3);
     } else {

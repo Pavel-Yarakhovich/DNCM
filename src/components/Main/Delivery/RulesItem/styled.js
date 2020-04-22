@@ -1,32 +1,39 @@
 import styled, { css } from "styled-components";
 import { themes } from "../../../../config/themes";
-import { Link } from "react-router-dom";
 
 export const Feature = styled.div`
-  // height: 100%;
   display: flex;
   flex: 30% 1 1;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border-bottom: 1px solid ${themes.regular.gold};
 
-  @media (min-width: 600px) {
-    border-color: transparent;
+  @media (max-width: 550px) {
+    width: 100%;
+    border-right: transparent;
+    border-radius: 51px 0 0 51px;
+    margin-left: 10px;
+    box-shadow: inset 1px 0 0 ${themes.regular.dark_violet};
+    transition: all 250ms ease;
+
+    ${props => props.expanded && css`
+      box-shadow: inset 1px 1px 0 ${themes.regular.gold};
+    `}
   }
 `;
 
 export const Top = styled.div`
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   margin-bottom: 15px;
   overflow: hidden;
 
-  @media (max-width: 600px) {
+  @media (max-width: 550px) {
     justify-content: space-between;
+    margin: 15px 0 15px 15px;
   }
 `;
 
@@ -58,11 +65,19 @@ export const Feature_Description = styled.p`
   color: ${themes.regular.black};
   align-self: flex-start;
   margin: 5px 0;
+
+  @media (max-width: 550px) {
+    text-align: right;
+  }
 `;
 
 export const DescriptionBlock = styled.div`
   display: flex;
   flex-flow: column;
   flex-grow: 1;
+  justify-content: center;
 
+  @media (max-width: 550px) {
+    padding: 0 10px 10px 40px;
+  }
 `;

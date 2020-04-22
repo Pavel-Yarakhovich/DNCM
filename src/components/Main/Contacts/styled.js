@@ -12,10 +12,13 @@ export const Container = styled.div`
   color: ${themes.regular.white};
   justify-content: center;
   background-size: cover;
+  
 
-  @media (max-width: 600px) {
+  @media (max-width: 550px) {
     padding: 0 8px;
     box-sizing: border-box;
+    max-height: calc(100vh - 104px);
+    overflow-X: auto;
   }
 `;
 

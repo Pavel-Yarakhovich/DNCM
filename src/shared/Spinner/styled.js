@@ -11,11 +11,11 @@ const bounce = keyframes`
   opacity: 1;
   -webkit-transform: scale(1.0);
 }
-`
+`;
 
 const rotate = keyframes`
 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }
-`
+`;
 
 export const Spinner = styled.div`
   margin: 100px auto;
@@ -23,39 +23,39 @@ export const Spinner = styled.div`
   height: 100px;
   position: relative;
   text-align: center;
-  
-  -webkit-animation: sk-rotate 2.0s infinite linear;
-  animation: ${rotate} 2.0s infinite linear;
-`
+
+  -webkit-animation: sk-rotate 2s infinite linear;
+  animation: ${rotate} 2s infinite linear;
+`;
 
 export const DotOne = styled.div`
-width: 50%;
-height: 50%;
-display: inline-block;
-position: absolute;
-top: 0;
-border: 1px solid ${themes.regular.violet};
-border-radius: 100%;
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  border: 1px solid ${themes.regular.violet};
+  border-radius: 100%;
 
--webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-animation: ${bounce} 2.0s infinite ease-in-out;
-`
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: ${bounce} 2s infinite ease-in-out;
+`;
 
 export const DotTwo = styled.div`
-width: 60%;
-height: 60%;
-display: inline-block;
-position: absolute;
-border: 1px solid ${themes.regular.gold};
-border-radius: 100%;
-top: auto;
-bottom: 0;
--webkit-animation-delay: -1.0s;
-animation-delay: -1.0s;
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  border: 1px solid ${themes.regular.gold};
+  border-radius: 100%;
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 
--webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-animation: ${bounce} 2.0s infinite ease-in-out;
-`
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: ${bounce} 2s infinite ease-in-out;
+`;
 
 // @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
 

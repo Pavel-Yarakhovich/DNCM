@@ -49,6 +49,10 @@ export const Image = styled.img`
   @media (max-width: 1200px) {
     height: 150px;
   }
+
+  @media (max-width: 550px) {
+    height: 220px;
+  }
 `;
 
 export const Description = styled.div`
