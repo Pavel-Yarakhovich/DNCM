@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   height: 100%;
   box-shadow: 2px 3px 8px ${themes.regular.shadow};
   background: ${themes.regular.white};
-  border-radius: 5px;
+  // border-radius: 5px;
   padding: 8px;
   box-sizing: border-box;
   display: flex;
@@ -33,7 +33,7 @@ export const Buttons = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
-  height: 90px;
+  // height: 90px;
   justify-content: space-between;
   align-self: center;
   align-items: center;
@@ -62,5 +62,6 @@ export const Description = styled.div`
   text-transform: uppercase;
   text-align: center;
   margin: 0 0 15px;
+  letter-spacing: .2rem;
   // height: 125px;
 `;

@@ -22,7 +22,7 @@ const Content = ({ src, text, size, manufacturer, closePopup }) => {
           <Styled.InfoTitle>Производитель</Styled.InfoTitle>
           <Styled.InfoContent>{manufacturer}</Styled.InfoContent>
         </Styled.InfoBlock>
-        <Styled.CallLink href="tel:80445421964"><CallIcon fontSize="large"/>Позвонить в магазин</Styled.CallLink>
+        <Styled.CallLink href="tel:80445421964"><CallIcon fontSize="large"/>Заказать</Styled.CallLink>
       </Styled.MoreInfo>
     </Styled.Container>
   );

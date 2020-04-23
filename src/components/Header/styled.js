@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 export const Header = styled.div`
   width: 100%;
-  height: 66px;
-  background: ${themes.regular.violet};
+  height: 65px;
+  background: linear-gradient(150deg, ${themes.regular.black} 5%, ${themes.regular.dark_violet} 30%, ${themes.regular.violet});
   display: flex;
   align-items: center;
   border-bottom: 4px solid ${themes.regular.white};
@@ -51,7 +51,7 @@ export const Logo = styled.img`
 
   @media (max-width: 900px) {
     left: 0;
-    top: -4px;
+    top: -8px;
     transform: translateY(0);
   }
 `;

@@ -6,7 +6,7 @@ const Button = styled.button`
   height: 40px;
   width: 100%;
   border: 1px solid transparent;
-  border-radius: 4px;
+  // border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -26,8 +26,10 @@ const Button = styled.button`
   ${(props) =>
     props.type === "details" &&
     css`
-      border-color: ${themes.regular.gold};
-      color: ${themes.regular.gold};
+      border-color: ${themes.regular.violet};
+      color: ${themes.regular.dark_violet};
+      font-weight: 400;
+      letter-spacing: .2rem;
     `}
 
     ${(props) =>
@@ -45,7 +47,7 @@ const Button = styled.button`
     props.type === "contact" &&
     css`
       border-color: ${themes.regular.violet};
-      background: ${themes.regular.violet};
+      background: linear-gradient(30deg, ${themes.regular.dark_violet}, ${themes.regular.violet});
       color: ${themes.regular.white};
     `}
 

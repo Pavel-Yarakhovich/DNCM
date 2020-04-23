@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
 import { themes } from "../config/themes";
 
 export const App = styled.div`
@@ -20,6 +20,10 @@ export const ContentWrapper = styled.div`
   max-height: 100vh;
   display: flex;
   flex-flow: column;
+
+  ${props => props.start && css`
+    background: ${themes.regular.black};
+  `}
 `;
 
 export const GlobalStyle = createGlobalStyle`
