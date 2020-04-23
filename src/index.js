@@ -8,6 +8,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "./store/reducers";
 
+import { BrowserRouter } from "react-router-dom";
+
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
@@ -18,7 +20,9 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -5,7 +5,7 @@ export const Footer = styled.div`
   width: 100%;
   height: 70px;
   flex-shrink: 0;
-  background: ${themes.regular.dark_violet};
+  background: linear-gradient(150deg, ${themes.regular.violet} 5%, ${themes.regular.dark_violet} 30%, ${themes.regular.black});
   display: flex;
   align-items: center;
   border-top: 4px solid ${themes.regular.white};

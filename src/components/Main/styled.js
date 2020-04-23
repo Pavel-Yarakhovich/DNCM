@@ -9,7 +9,8 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
-  // height: 100%;
+  // padding: 0 10px;
+  box-sizing: border-box;
   margin: 0 auto;
   flex-grow: 1;
   display: flex;
@@ -26,7 +27,7 @@ export const Wrapper = styled.div`
     width: 768px;
   }
   @media (min-width: 1200px) {
-    width: 1140px;
+    width: 1190px;
   }
 `;
 

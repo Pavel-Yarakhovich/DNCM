@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../../../../shared/Button";
 import { Transition } from "react-transition-group";
 import * as Styled from "./styled";
+import TouchAppRoundedIcon from '@material-ui/icons/TouchAppRounded';
 
 const defaultMenu = {
   right: -200,
@@ -67,7 +68,7 @@ export default ({ clicked, selected }) => {
             Разное
           </Button>
           <Styled.Toggler onClick={toggleMenu}>
-            <Styled.Arrows fontSize="large" />
+            <TouchAppRoundedIcon fontSize="large" />
           </Styled.Toggler>
         </Styled.Menu>
       )}

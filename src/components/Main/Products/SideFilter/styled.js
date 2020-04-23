@@ -14,7 +14,7 @@ export const Menu = styled.div`
   right: 0;
   height: 100vh;
   width: 200px;
-  background: rgba(44, 0, 49, 0.7);
+  background: linear-gradient(90deg, rgba(16, 0, 18, 0.7), rgba(44, 0, 49, 0.7));
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -30,10 +30,11 @@ export const Toggler = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
+  width: 40px;
   height: 60px;
   top: 70px;
-  left: -50px;
-  border-radius: 50px 0 0 30px;
-  background: rgba(44, 0, 49, 0.7);
+  left: -40px;
+  border-radius: 50px 0 0 50px;
+  background: linear-gradient(90deg, rgba(16, 0, 18, 0.9), rgba(16, 0, 18, 0.7));
+  color: ${themes.regular.white};
 `;

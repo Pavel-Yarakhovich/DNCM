@@ -14,7 +14,7 @@ function Waiting(Component) {
 const Routing = () => {
   return (
     <Switch>
-      <Redirect exact from="/" to="/delivery" />
+      {/* <Redirect exact from="/" to="/delivery" /> */}
       {ROUTES.map(({ path, component }, key) => (
         <Route key={key} exact path={path} component={Waiting(component)} />
       ))}

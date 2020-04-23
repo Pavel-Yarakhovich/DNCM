@@ -21,7 +21,11 @@ export const Container = styled.div`
   }
 
   @media (max-width: 550px) {
-    grid-template-columns: 100%;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    grid-template-columns: 100vw;
     grid-template-rows: 1fr max-content max-content;
     grid-template-areas:
       "image"
@@ -32,7 +36,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
   object-position: center center;
   grid-area: image;
@@ -41,6 +45,12 @@ export const Image = styled.img`
 export const Description = styled.div`
   grid-area: description;
   padding: 12px;
+  box-sizing: border-box;
+
+  @media (max-width: 550px) {
+    padding: 0;
+    margin: 10px 0;
+  }
 `;
 
 export const MoreInfo = styled.div`
@@ -51,8 +61,7 @@ export const MoreInfo = styled.div`
   align-items: center;
 
   @media (max-width: 550px) {
-    flex-flow: row;
-    justify-content: space-between;
+    margin-bottom: 80px;
   }
 `;
 
@@ -76,7 +85,7 @@ export const InfoBlock = styled.div`
 
   @media (max-width: 550px) {
     margin: 0;
-    padding: 0 5px;
+    padding: 0;
   }
 `;
 
@@ -85,19 +94,33 @@ export const InfoTitle = styled.span`
   font-weight: 600;
   color: ${themes.regular.dark_violet};
   margin: 0;
+
+  @media (max-width: 550px) {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid ${themes.regular.dark_violet};
+    border-bottom: 1px solid ${themes.regular.dark_violet};
+  }
 `;
 
 export const InfoContent = styled.p`
   font-size: 1rem;
   color: ${themes.regular.main_text};
   margin: 0;
+
+  @media (max-width: 550px) {
+    padding: 8px;
+    box-sizing: border-box;
+  }
 `;
 
 export const CallLink = styled.a`
   max-width: 100%;
   padding: 12px;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 4px;
   border: 0.6px solid ${themes.regular.main_text};
   color: ${themes.regular.dark_violet};
   display: flex;
@@ -108,7 +131,16 @@ export const CallLink = styled.a`
   text-decoration: none;
 
   @media (max-width: 550px) {
-    padding: 5px;
-    font-size: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 6px 9px 12px ${themes.regular.black}, -4px -3px 6px ${themes.regular.shadow};
+    color: ${themes.regular.white};
+    background: linear-gradient(60deg, ${themes.regular.dark_violet}, ${themes.regular.violet});
   }
 `;

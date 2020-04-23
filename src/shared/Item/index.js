@@ -16,9 +16,9 @@ const Item = withRouter(({ history, src, description, size, manufacturer, showPo
       <Styled.Description>{description.substr(0, 80)} ...</Styled.Description>
       <Styled.Buttons>
         <StyledButton type="details" clicked={handleShowDetails}>
-          Show details
+          Подробнее
         </StyledButton>
-        <StyledButton type="contact" clicked={() => history.push("/contacts")}>Contact us</StyledButton>
+        {/* <StyledButton type="contact" clicked={() => history.push("/contacts")}>Заказать</StyledButton> */}
       </Styled.Buttons>
       </Styled.Wrapper>
     </Styled.Container>
