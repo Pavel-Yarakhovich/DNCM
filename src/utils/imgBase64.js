@@ -5,15 +5,30 @@ export default (img) => {
     reader.onload = (event) => {
       const img = new Image();
       img.src = event.target.result;
+      // img.onload = drawImageActualSize;
+
+      // function drawImageActualSize() {
+      //   const canvas = document.createElement("canvas");
+      //   const ctx = canvas.getContext("2d");
+      //   canvas.width = this.naturalWidth;
+      //   canvas.height = this.naturalHeight;
+
+      //   ctx.drawImage(this, 0, 0, this.width, this.height);
+
+      //   const b64 = canvas.toDataURL("image/png");
+      //   resolve(b64);
+      // }
       img.onload = () => {
+        console.log(typeof img.width, typeof img.height);
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d");
-        canvas.width = 250;
-        canvas.height = 250;
+        canvas.width = 200;
+        canvas.height = 300;
         // img.width and img.height will contain the original dimensions
-        ctx.drawImage(img, 0, 0, 250, 250);
+        ctx.drawImage(img, 0, 0, 200, 300 );
 
         const b64 = canvas.toDataURL("image/png");
+        console.log(b64);
         resolve(b64);
       };
     };

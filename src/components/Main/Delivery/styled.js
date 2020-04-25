@@ -11,7 +11,7 @@ export const Container = styled.div`
   color: ${themes.regular.black};
 
   @media (max-width: 768px) {
-    height: calc(100vh - 110px);
+    height: calc(100vh - 54px);
   }
 `;
 

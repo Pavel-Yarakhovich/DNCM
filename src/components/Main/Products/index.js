@@ -7,6 +7,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { productsQuery } from "./queries";
 import NoPhoto from "../../../assets/image/no_photo.png";
 import Spinner from "../../../shared/Spinner";
+import PageHeader from "../../../shared/PageHeader";
 
 import * as Styled from "./styled";
 
@@ -29,6 +30,9 @@ export default () => {
 
   return (
     <Styled.Container>
+      <Styled.PageTitle>
+        <PageHeader title="Каталог" />
+      </Styled.PageTitle>
       <Styled.Filter>
         <Button
           type="select"

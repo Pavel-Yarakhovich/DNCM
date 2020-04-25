@@ -37,6 +37,7 @@ export default () => {
             dots={true}
             slidesToScroll={1}
             slidesToShow={feedbacksPerPage}
+            arrows={false}
           >
             {data.feedbacks.map(({ id, name, comment }) => (
               <Feedback name={name} comment={comment} />

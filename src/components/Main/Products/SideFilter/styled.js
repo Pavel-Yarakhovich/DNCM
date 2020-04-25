@@ -30,11 +30,15 @@ export const Toggler = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 60px;
   height: 60px;
   top: 70px;
-  left: -40px;
+  left: -60px;
   border-radius: 50px 0 0 50px;
   background: linear-gradient(90deg, rgba(16, 0, 18, 0.9), rgba(16, 0, 18, 0.7));
   color: ${themes.regular.white};
+
+  @media (max-width: 600px) {
+    top: 100px;
+  }
 `;

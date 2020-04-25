@@ -13,11 +13,13 @@ export const Container = styled.div`
   justify-content: center;
   background-size: cover;
   
+  @media (nax-width: 767px) {
+    max-height: calc(100vh - 54px);
+  }
 
   @media (max-width: 550px) {
     padding: 0 8px;
     box-sizing: border-box;
-    max-height: calc(100vh - 104px);
     overflow-X: auto;
   }
 `;

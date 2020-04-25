@@ -1,16 +1,21 @@
 import styled, {css} from "styled-components";
-import { themes } from "../../config/themes";
+import { themes } from "../../../config/themes";
 
-export const Footer = styled.div`
+export const Menu = styled.div`
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + 1px);
+  left: 0;
   width: 100%;
-  height: 70px;
+  height: 80px;
   flex-shrink: 0;
-  background: linear-gradient(150deg, ${themes.regular.violet} 5%, ${themes.regular.dark_violet} 30%, ${themes.regular.black});
+  background: linear-gradient(180deg, rgba(16, 0, 18, 0.5), rgba(44, 0, 49, 0.85));
   display: flex;
-  align-items: center;
-  border-top: 4px solid ${themes.regular.white};
+  align-items: flex-end;
+  border-bottom: 1px solid ${themes.regular.black};
+  box-sizing: border-box;
 
-  @media (max-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `;
