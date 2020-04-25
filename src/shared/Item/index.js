@@ -13,7 +13,7 @@ const Item = withRouter(({ history, src, description, size, manufacturer, showPo
     <Styled.Container>
       <Styled.Wrapper>
       <Styled.Image src={src} />
-      <Styled.Description>{description.substr(0, 80)} ...</Styled.Description>
+      <Styled.Description>{description.substr(0, 50)} ...</Styled.Description>
       <Styled.Buttons>
         <StyledButton type="details" clicked={handleShowDetails}>
           Подробнее

@@ -22,16 +22,21 @@ export const Container = styled.div`
 
   @media (max-width: 550px) {
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+    height: 85vh;
     overflow: auto;
-    grid-template-columns: 100vw;
+    grid-template-columns: 100%;
     grid-template-rows: 1fr max-content max-content;
     grid-template-areas:
       "image"
       "description"
       "info";
   }
+`;
+
+export const ImageWrapper = styled.div`
+  padding: 8px;
+  box-sizing: border-box;
 `;
 
 export const Image = styled.img`
@@ -135,12 +140,17 @@ export const CallLink = styled.a`
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    width: 220px;
     padding: 5px 25px;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    box-shadow: 6px 9px 12px ${themes.regular.black}, -4px -3px 6px ${themes.regular.shadow};
-    color: ${themes.regular.white};
-    background: linear-gradient(60deg, ${themes.regular.dark_violet}, ${themes.regular.violet});
+    border-radius: 0;
+    border: none;
+    opacity: .95;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2), 0px 3px 16px rgba(0, 0, 0, 0.12),
+    0px 9px 12px rgba(0, 0, 0, 0.14);
+    color: ${themes.regular.black};
+    background: ${themes.regular.white};
   }
 `;

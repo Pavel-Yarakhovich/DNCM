@@ -2,10 +2,18 @@ import styled from "styled-components";
 import { themes } from "../../config/themes";
 
 export const Container = styled.div`
-  width: 33%;
+  width: 20%;
   height: auto;
   padding: 8px;
   box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    width: 25%;
+  }
+
+  @media (max-width: 900px) {
+    width: 33%;
+  }
 
   @media (max-width: 600px) {
     width: 50%;

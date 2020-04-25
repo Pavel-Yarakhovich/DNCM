@@ -28,8 +28,7 @@ const transitionContainer = {
   exited: { transform: "translate(-50%, -250%)",  opacity: 1 }
 };
 
-const PopupContainer = ({ isShown, content }) => {
-  return (
+const PopupContainer = ({ isShown, content }) => (
     <Transition in={isShown} timeout={duration} mountOnEnter unmountOnExit>
       {state => (
         <Styled.Backdrop
@@ -51,7 +50,6 @@ const PopupContainer = ({ isShown, content }) => {
       )}
     </Transition>
   );
-};
 
 const mapStateToProps = state => {
   return {

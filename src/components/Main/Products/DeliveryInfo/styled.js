@@ -3,10 +3,15 @@ import { themes } from "../../../../config/themes";
 import { Link } from "react-router-dom";
 
 export const Details = styled(Link)`
-font-size: 0.7rem;
+font-size: 1.2rem;
 letter-spacing: 0.08rem;
-color: ${themes.regular.violet};
-margin: 0.8rem 0;
+color: ${themes.regular.dark_violet};
+opacity: .7;
+margin:0;
+text-decoration: none;
+padding-left: 15px;
+text-transform: uppercase;
+font-weight: 600;
 `;
 
 export const Container = styled.div`
@@ -22,8 +27,9 @@ export const Container = styled.div`
 
 export const Feature = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 30% 1 1;
-  flex-flow: column;
   padding: 8px;
   box-sizing: border-box;
 `;
@@ -32,18 +38,10 @@ export const Feature_Logo = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: ${themes.regular.dark_violet};
   opacity: 0.6;
   color: ${themes.regular.white};
-`;
-
-export const Feature_Description = styled.p`
-  font-size: 0.7rem;
-  letter-spacing: 0.08rem;
-  color: #555;
-  margin: 0;
 `;

@@ -8,18 +8,19 @@ export const Container = styled.div`
   height: calc(100vh - 150px);
   background: transparent;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 15px;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 150px 1fr;
+  grid-template-rows: 60px 1fr;
   grid-template-areas:
-    "filter delivery "
+    "title delivery "
     "filter gallery";
 
   @media (max-width: 1200px) {
     grid-gap: 10px;
     grid-template-columns: 100%;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: 50px 50px 1fr;
     grid-template-areas:
+      "title"
       "filter"
       "gallery";
   }
@@ -27,14 +28,24 @@ export const Container = styled.div`
   @media (max-width: 900px) {
     grid-gap: 0;
     grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    grid-template-areas: "gallery";
+    grid-template-rows: 50px 100%;
+    grid-template-areas: 
+    "title"
+    "gallery";
   }
 
   @media (max-width: 767px) {
-    height: calc(100vh - 104px);
+    height: calc(100vh - 54px);
   }
 `;
+
+export const PageTitle = styled.div`
+  grid-area: title;
+
+  // @media (max-width: 1200px) {
+  //   display: none;
+  // }
+`
 
 export const Filter = styled.div`
   align-self: flex-end;
@@ -79,9 +90,14 @@ export const Display = styled.div`
     background-color: ${themes.regular.violet};
   }
 
+  @media (max-width: 900px) {
+    padding-top: 10px;
+    max-height: calc(100% - 50px);
+  }
+
   @media (max-width: 768px) {
     padding-top: 10px;
-    max-height: calc(100% - 10px);
+    max-height: calc(100% - 60px);
   }
 `;
 

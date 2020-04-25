@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Placeholder from "../../../../assets/image/avatar-placeholder.png";
+import Placeholder from "../../../../assets/image/noavatar.png";
 
 const Container = styled.div`
   display: flex;
@@ -14,8 +14,8 @@ const Container = styled.div`
 `;
 
 const Photo = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;

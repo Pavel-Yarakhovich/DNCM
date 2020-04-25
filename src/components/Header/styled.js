@@ -10,7 +10,8 @@ export const Header = styled.div`
   background: linear-gradient(150deg, ${themes.regular.black} 5%, ${themes.regular.dark_violet} 30%, ${themes.regular.violet});
   display: flex;
   align-items: center;
-  border-bottom: 4px solid ${themes.regular.white};
+  border-bottom: 1px solid ${themes.regular.white};
+  position: relative;
 
   @media (max-width: 768px) {
     height: 50px;
@@ -38,7 +39,7 @@ export const Container = styled.div`
 
 export const Logo = styled.img`
   position: absolute;
-  z-index: 10;
+  z-index: 1110;
   width: 60px;
   height: 60px;
   flex-shrink: 0;
@@ -99,3 +100,8 @@ export const Insta = styled.a`
 `;
 
 export const AdminLink = styled(Link)``;
+
+export const ContactWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
