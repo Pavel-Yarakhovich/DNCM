@@ -17,7 +17,7 @@ function App({ location }) {
     <ApolloProvider client={client}>
         <Styled.GlobalStyle />
         <Styled.App>
-          <Styled.ContentWrapper start={ location.pathname === "/" }>
+          <Styled.ContentWrapper start={ location.pathname === "/" ? true : undefined }>
             <Header />
             <Main />
             <Footer />
